@@ -22,6 +22,8 @@ public class UserService {
 			EntityManagerFactory emf = Persistence.createEntityManagerFactory("swap");
 			emf = Persistence.createEntityManagerFactory("swap");
 			EntityManager em = emf.createEntityManager();
+			
+			
 
 			em.getTransaction().begin();
 			Query query = em.createNativeQuery("SELECT user_name,password FROM users");
