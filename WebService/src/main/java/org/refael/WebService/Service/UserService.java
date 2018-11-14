@@ -20,14 +20,13 @@ public class UserService {
 	{
 		try {
 			EntityManagerFactory emf = Persistence.createEntityManagerFactory("swap");
-			emf = Persistence.createEntityManagerFactory("swap");
 			EntityManager em = emf.createEntityManager();
-			
-			
 
 			em.getTransaction().begin();
+
 			Query query = em.createNativeQuery("SELECT user_name,password FROM users");
-			ArrayList<User> users = (ArrayList<User>) query.getResultList();
+			//ArrayList<User> users = (ArrayList<User>) query.getResultList();
+			List<User> users = em.createQuery("SELECT u FROM users u").getResultList();
 			em.getTransaction().commit();
 			em.close();
 			emf.close();
