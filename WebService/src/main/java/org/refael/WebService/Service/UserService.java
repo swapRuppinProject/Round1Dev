@@ -25,11 +25,22 @@ public class UserService {
 
 			em.getTransaction().begin();
 			Query query = em.createNativeQuery("SELECT user_name,password FROM users");
-			ArrayList<User> users = (ArrayList<User>) query.getResultList();
+			ArrayList<Object> users = (ArrayList<Object>) query.getResultList();
 			em.getTransaction().commit();
 			em.close();
 			emf.close();
-			return new ArrayList<User>(users);
+			List<User> newUsers = new ArrayList<>();
+			for(Object u : users)
+			{
+				String s = u.toString();
+				System.out.println();
+				//String name = u.getUserName();
+			//	String password = u.getPassword();
+				//User tmp =  new User(name,password);
+				//newUsers.add(tmp);
+			}
+			//System.out.println();
+			return newUsers;
 		}catch(Exception e)
 		{
 			e.printStackTrace();

@@ -1,8 +1,9 @@
 package org.refael.WebService.Resource;
 
-import java.util.List;
 
-import javax.json.Json;
+
+import java.io.IOException;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -12,6 +13,9 @@ import javax.ws.rs.core.MediaType;
 import org.refael.WebService.Model.User;
 import org.refael.WebService.Service.UserService;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 @Path("users")
 @Consumes(MediaType.APPLICATION_JSON)
@@ -19,11 +23,23 @@ import org.refael.WebService.Service.UserService;
 public class UserResource {
 
 	UserService us = new UserService();
+	ObjectMapper mapper = new ObjectMapper();
 	
 	@GET
-	public List<User> getUsers()
+	public String getUsers()
 	{
-		return us.getAllUsers();
+
+			String jsonInString;
+			try {
+				jsonInString = mapper.writeValueAsString(us.getAllUsers());
+				return jsonInString;
+			} catch (JsonProcessingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+return null;
+
 		
 		
 	}
