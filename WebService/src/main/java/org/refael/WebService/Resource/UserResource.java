@@ -24,6 +24,8 @@ public class UserResource {
 	public List<User> getUsers()
 	{
 		return us.getAllUsers();
+		
+		
 	}
 	
 	@GET
