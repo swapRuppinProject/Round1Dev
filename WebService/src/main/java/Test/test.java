@@ -4,7 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import org.refael.WebService.Model.User;
+import org.Swap.WebService.Model.User;
 
 public class test {
 
@@ -14,7 +14,7 @@ public class test {
 		
 		entityManager.getTransaction().begin();
 		
-		User user = new User("as","21");
+		User user = new User(123,"as","21");
 		
 		entityManager.persist(user);
 		

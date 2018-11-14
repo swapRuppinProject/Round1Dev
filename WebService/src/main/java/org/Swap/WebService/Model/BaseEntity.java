@@ -1,4 +1,4 @@
-package org.refael.WebService.Model;
+package org.Swap.WebService.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package org.refael.WebService.Resource;
+package org.Swap.WebService.Resource;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
