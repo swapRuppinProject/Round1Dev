@@ -18,6 +18,8 @@ public class User extends BaseEntity{
 	private String password;
 	
 	
+	
+	
 	public User() {
 		super();
 	}
