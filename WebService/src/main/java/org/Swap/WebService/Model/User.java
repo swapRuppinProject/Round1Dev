@@ -2,13 +2,17 @@ package org.Swap.WebService.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@Entity(name="users")
+@Entity
 @Table(name="users")
 @XmlRootElement
-public class User extends BaseEntity{
+public class User extends BaseEntity 
+{
 	
 	@Column(name="personal_id")
 	private int personalID;
@@ -24,12 +28,15 @@ public class User extends BaseEntity{
 		super();
 	}
 
+
+
 	public User(int personalID, String userName, String password) {
 		super();
 		this.personalID = personalID;
 		this.userName = userName;
 		this.password = password;
 	}
+
 
 	public String getUserName() {
 		return userName;
@@ -51,5 +58,7 @@ public class User extends BaseEntity{
 	public void setPersonalID(int personalID) {
 		this.personalID = personalID;
 	}
+
+	
 	
 }

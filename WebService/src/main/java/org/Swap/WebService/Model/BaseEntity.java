@@ -12,7 +12,7 @@ public class BaseEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "auto_id")
+	@Column(name = "auto_id", updatable = false, nullable = false)
 	private long id;
 
 	public BaseEntity() {

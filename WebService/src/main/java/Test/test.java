@@ -14,7 +14,7 @@ public class test {
 		
 		entityManager.getTransaction().begin();
 		
-		User user = new User(123,"as","21");
+		User user = new User(12333,"333","333");
 		
 		entityManager.persist(user);
 		

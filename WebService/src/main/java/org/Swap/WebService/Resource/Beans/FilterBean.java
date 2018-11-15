@@ -4,14 +4,28 @@ import javax.ws.rs.QueryParam;
 
 public class FilterBean {
 
-	private @QueryParam("name") int userName;
+	private @QueryParam("userName") String userName;
+	private @QueryParam("password") String password;
+	private @QueryParam("name") String name;
 	private @QueryParam("id") int id;
 	
-	public int getUserName() {
+	public String getUserName() {
 		return userName;
 	}
-	public void setUserName(int userName) {
+	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public int getId() {
 		return id;
@@ -20,6 +34,7 @@ public class FilterBean {
 		this.id = id;
 	}
 	
+
 	
 
 }
